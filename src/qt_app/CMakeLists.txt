@@ -32,7 +32,10 @@ endif()
 
 target_link_libraries(3D_Viewer PUBLIC
     renderer
+)
+target_link_libraries(3D_Viewer PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::OpenGL
 )
 
 target_include_directories(3D_Viewer PUBLIC 
