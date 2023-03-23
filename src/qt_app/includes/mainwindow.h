@@ -17,5 +17,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+private slots:
+    void choose_file();
+    void choose_color();
 };
 #endif // MAINWINDOW_H
