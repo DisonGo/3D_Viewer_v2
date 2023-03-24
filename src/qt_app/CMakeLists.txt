@@ -1,6 +1,7 @@
 AUX_SOURCE_DIRECTORY(./src VIEWER_SRCS)
 set(VIEWER_HEADERS
     includes/mainwindow.h
+    includes/loadstyle.h
 )
 set(VIEWER_UIS
     UI/mainwindow.ui
