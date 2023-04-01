@@ -20,8 +20,84 @@
    <string>3DViewer</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-color:  #3F3931;
+   <string notr="true">QMainWindow{
+	background-color:  #736454;
+}
+/* КНОПКИ */
+QPushButton {
+	background-color: #997f62;
+	font: normal 16pt &quot;Nunito&quot;;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: #634320;
+	font-size: 18pt;
+}
+QPushButton:pressed {
+	/*background-color: #4a3825;*/
+	background-color: #997f62;
+}
+/*background-color: #6B5E4F;*/
+
+/* QTABWIDGET */
+#tabWidget {
+	background-color: #997f62;
+}
+QTabBar::tab:selected {
+	background-color: #736454;
+}
+QTabBar::tab{
+	width: 84;
+	background-color: #997f62;
+	border: 1px solid #736454;
+}
+#tab_1 {
+	background-image: url(&quot;:/icons/note.svg&quot;);
+}
+#tab_2 {
+	background-image: url(&quot;:/icons/tuner.svg&quot;);
+}
+#tab_3 {
+	background-image: url(&quot;:/icons/settings.svg&quot;);
+}
+/* _QTABWIDGET */
+
+/* ЦВЕТ ФОНА ТЕКСТА */
+#frame_move, #frame_rotate, #label_scale, #horizontalSlider_scale, Line, #frame_4, #label_widthTop, #labelwidthLine, #label_versh, #frame, #label_line, #label_type, #label_widthLine, #radioButton_typeParallel, #radioButton_typeCentr   {
+	background-color: #997f62;
+}
+
+/* ГРАНИЦЫ */
+#frame_rotate, #label_scale, #frame_move, #horizontalSlider_scale, QPushButton {
+	border: 1px solid  #736454;
+}
+
+/* ШРИФТ */
+#label_rotate, #label_move, #label_scale, #label_moveX, #label_moveY, #label_moveZ, #label_rotateX, #label_rotateY, #label_rotateZ {	
+	font : normal 14pt &quot;Nunito&quot;;
+}
+#label_widthLine, #label_typeLine, #label_widthTop, #label_top {	
+	font : normal 12pt &quot;Nunito&quot;;
+	padding-left: 20vw;
+}
+#radioButton_typeCentr, #radioButton_typeParallel, #radioButton_lineSolid, #radioButton_lineDashed, #radioButton_topCircle, #radioButton_topSquear, #radioButton_topNone{
+	font: normal 10pt &quot;Nunito&quot;;
+}
+#label_line,#label_type,#label_versh  {
+	font :bold 12pt &quot;Nunito&quot;;
+}
+Line {
+	line-height: 6pt;
+}
+#radioButton_typeCentr{
+	padding-left: 15px;
+}
+#pushButton_backgroungColor {
+	margin-top: 5px;
+}
+#label_countTop, #label_countReber, #label_fileName{
+	font: bold 10pt &quot;Nunito&quot;;
+}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -36,7 +112,7 @@ background-color:  #3F3931;
         <item row="0" column="1">
          <widget class="QTabWidget" name="tabWidget">
           <property name="styleSheet">
-           <string notr="true">background-color: #6B5E4F;</string>
+           <string notr="true"/>
           </property>
           <property name="currentIndex">
            <number>2</number>
@@ -48,18 +124,17 @@ background-color:  #3F3931;
            </size>
           </property>
           <widget class="QWidget" name="tab_1">
-           <attribute name="icon">
-            <iconset>
-             <normaloff>../note.svg</normaloff>../note.svg</iconset>
-           </attribute>
            <attribute name="title">
             <string/>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_5">
             <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_2" rowstretch="2,0,3" columnstretch="0" rowminimumheight="0,0,0" columnminimumwidth="0">
-              <property name="spacing">
+             <layout class="QGridLayout" name="gridLayout_2" rowstretch="2,2" columnstretch="0">
+              <property name="horizontalSpacing">
                <number>30</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>60</number>
               </property>
               <item row="0" column="0">
                <layout class="QVBoxLayout" name="verticalLayout" stretch="8,8">
@@ -127,7 +202,11 @@ background-color:  #3F3931;
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>14</pointsize>
+                    <family>Nunito</family>
+                    <pointsize>16</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="layoutDirection">
@@ -141,23 +220,7 @@ background-color:  #3F3931;
                </layout>
               </item>
               <item row="1" column="0">
-               <widget class="Line" name="line">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="lineWidth">
-                 <number>2</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <layout class="QGridLayout" name="gridLayout_4" rowstretch="7,7,0" columnstretch="5" rowminimumheight="5,15,0" columnminimumwidth="20">
+               <layout class="QGridLayout" name="gridLayout_4" rowstretch="7,7" columnstretch="5" rowminimumheight="5,15" columnminimumwidth="20">
                 <property name="horizontalSpacing">
                  <number>10</number>
                 </property>
@@ -180,7 +243,11 @@ background-color:  #3F3931;
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>14</pointsize>
+                    <family>Nunito</family>
+                    <pointsize>16</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -205,7 +272,11 @@ background-color:  #3F3931;
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>14</pointsize>
+                    <family>Nunito</family>
+                    <pointsize>16</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -220,10 +291,6 @@ background-color:  #3F3931;
            </layout>
           </widget>
           <widget class="QWidget" name="tab_2">
-           <attribute name="icon">
-            <iconset>
-             <normaloff>../tuner.svg</normaloff>../tuner.svg</iconset>
-           </attribute>
            <attribute name="title">
             <string/>
            </attribute>
@@ -236,20 +303,8 @@ background-color:  #3F3931;
               <property name="verticalSpacing">
                <number>10</number>
               </property>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_4">
-                <property name="font">
-                 <font>
-                  <pointsize>16</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Перемещение модели</string>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="0">
-               <widget class="QFrame" name="frame_3">
+               <widget class="QFrame" name="frame_move">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -270,36 +325,14 @@ background-color:  #3F3931;
                   <number>12</number>
                  </property>
                  <item row="0" column="0">
-                  <layout class="QGridLayout" name="gridLayout_15" rowstretch="2,2,2" columnstretch="1,6" columnminimumwidth="0,0">
+                  <layout class="QGridLayout" name="gridLayout_15" rowstretch="2,2,2,2" columnstretch="1,6" columnminimumwidth="0,0">
                    <property name="horizontalSpacing">
                     <number>10</number>
                    </property>
                    <property name="verticalSpacing">
                     <number>3</number>
                    </property>
-                   <item row="0" column="1">
-                    <widget class="QDoubleSpinBox" name="doubleSpinBox_moveX">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="label_moveX">
-                     <property name="font">
-                      <font>
-                       <pointsize>14</pointsize>
-                      </font>
-                     </property>
-                     <property name="text">
-                      <string>X</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="1">
+                   <item row="2" column="1">
                     <widget class="QDoubleSpinBox" name="doubleSpinBox_moveY">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -309,7 +342,65 @@ background-color:  #3F3931;
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="1">
+                   <item row="1" column="1">
+                    <widget class="QDoubleSpinBox" name="doubleSpinBox_moveX">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_moveY">
+                     <property name="font">
+                      <font>
+                       <family>Nunito</family>
+                       <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Y</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_moveX">
+                     <property name="font">
+                      <font>
+                       <family>Nunito</family>
+                       <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>X</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_moveZ">
+                     <property name="font">
+                      <font>
+                       <family>Nunito</family>
+                       <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Z</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
                     <widget class="QDoubleSpinBox" name="doubleSpinBox_moveZ">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -319,27 +410,19 @@ background-color:  #3F3931;
                      </property>
                     </widget>
                    </item>
-                   <item row="1" column="0">
-                    <widget class="QLabel" name="label_moveY">
+                   <item row="0" column="0" colspan="2">
+                    <widget class="QLabel" name="label_move">
                      <property name="font">
                       <font>
+                       <family>Nunito</family>
                        <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
                       </font>
                      </property>
                      <property name="text">
-                      <string>Y</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QLabel" name="label_moveZ">
-                     <property name="font">
-                      <font>
-                       <pointsize>14</pointsize>
-                      </font>
-                     </property>
-                     <property name="text">
-                      <string>Z</string>
+                      <string>Перемещение модели</string>
                      </property>
                     </widget>
                    </item>
@@ -358,20 +441,8 @@ background-color:  #3F3931;
               <property name="verticalSpacing">
                <number>10</number>
               </property>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_2">
-                <property name="font">
-                 <font>
-                  <pointsize>16</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Поворот модели</string>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="0">
-               <widget class="QFrame" name="frame_2">
+               <widget class="QFrame" name="frame_rotate">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -392,14 +463,30 @@ background-color:  #3F3931;
                   <number>12</number>
                  </property>
                  <item row="0" column="0">
-                  <layout class="QGridLayout" name="gridLayout_10" rowstretch="2,2,2" columnstretch="1,6" columnminimumwidth="0,0">
+                  <layout class="QGridLayout" name="gridLayout_10" rowstretch="2,2,2,2" columnstretch="1,6" columnminimumwidth="0,0">
                    <property name="horizontalSpacing">
                     <number>10</number>
                    </property>
                    <property name="verticalSpacing">
                     <number>3</number>
                    </property>
-                   <item row="0" column="1">
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_rotateZ">
+                     <property name="font">
+                      <font>
+                       <family>Nunito</family>
+                       <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Z</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
                     <widget class="QDoubleSpinBox" name="doubleSpinBox_rotateX">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -409,29 +496,7 @@ background-color:  #3F3931;
                      </property>
                     </widget>
                    </item>
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="label_rotateX">
-                     <property name="font">
-                      <font>
-                       <pointsize>14</pointsize>
-                      </font>
-                     </property>
-                     <property name="text">
-                      <string>X</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="1">
-                    <widget class="QDoubleSpinBox" name="doubleSpinBox_rotateY">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="1">
+                   <item row="3" column="1">
                     <widget class="QDoubleSpinBox" name="doubleSpinBox_totateZ">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -441,11 +506,25 @@ background-color:  #3F3931;
                      </property>
                     </widget>
                    </item>
-                   <item row="1" column="0">
+                   <item row="2" column="1">
+                    <widget class="QDoubleSpinBox" name="doubleSpinBox_rotateY">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
                     <widget class="QLabel" name="label_rotateY">
                      <property name="font">
                       <font>
+                       <family>Nunito</family>
                        <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
                       </font>
                      </property>
                      <property name="text">
@@ -453,15 +532,35 @@ background-color:  #3F3931;
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="0">
-                    <widget class="QLabel" name="label_rotateZ">
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_rotateX">
                      <property name="font">
                       <font>
+                       <family>Nunito</family>
                        <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
                       </font>
                      </property>
                      <property name="text">
-                      <string>Z</string>
+                      <string>X</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_rotate">
+                     <property name="font">
+                      <font>
+                       <family>Nunito</family>
+                       <pointsize>14</pointsize>
+                       <weight>50</weight>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Поворот модели</string>
                      </property>
                     </widget>
                    </item>
@@ -486,7 +585,11 @@ background-color:  #3F3931;
                  <widget class="QLabel" name="label_scale">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Nunito</family>
+                    <pointsize>14</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -527,36 +630,36 @@ background-color:  #3F3931;
            </layout>
           </widget>
           <widget class="QWidget" name="tab_3">
-           <attribute name="icon">
-            <iconset>
-             <normaloff>../settings.svg</normaloff>../settings.svg</iconset>
-           </attribute>
            <attribute name="title">
             <string/>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_9" rowstretch="3,2,2,2,1,6,2,5">
+           <layout class="QGridLayout" name="gridLayout_9" rowstretch="3,4,1,4,1,3" rowminimumheight="0,0,0,0,0,0">
             <property name="bottomMargin">
              <number>3</number>
             </property>
-            <property name="spacing">
+            <property name="horizontalSpacing">
              <number>0</number>
             </property>
+            <property name="verticalSpacing">
+             <number>4</number>
+            </property>
             <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_type" rowstretch="3,3">
+             <layout class="QGridLayout" name="gridLayout_type" rowstretch="0,0">
               <property name="rightMargin">
                <number>0</number>
               </property>
-              <property name="horizontalSpacing">
+              <property name="spacing">
                <number>0</number>
-              </property>
-              <property name="verticalSpacing">
-               <number>2</number>
               </property>
               <item row="0" column="0">
                <widget class="QLabel" name="label_type">
                 <property name="font">
                  <font>
-                  <pointsize>13</pointsize>
+                  <family>Nunito</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -570,11 +673,24 @@ background-color:  #3F3931;
               <item row="1" column="0">
                <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
                 <property name="spacing">
-                 <number>10</number>
+                 <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>10</number>
+                 <number>0</number>
                 </property>
+                <item>
+                 <widget class="QRadioButton" name="radioButton_typeCentr">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Центральная</string>
+                  </property>
+                 </widget>
+                </item>
                 <item>
                  <widget class="QRadioButton" name="radioButton_typeParallel">
                   <property name="sizePolicy">
@@ -591,49 +707,24 @@ background-color:  #3F3931;
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <widget class="QRadioButton" name="radioButton_typeCentr">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Центральная</string>
-                  </property>
-                 </widget>
-                </item>
                </layout>
               </item>
              </layout>
             </item>
             <item row="1" column="0">
-             <widget class="Line" name="line_1">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="lineWidth">
-               <number>2</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <layout class="QGridLayout" name="gridLayout_line" rowstretch="2,3,3,2">
-              <property name="verticalSpacing">
-               <number>3</number>
+             <layout class="QGridLayout" name="gridLayout_line" rowstretch="2,3,2,0">
+              <property name="spacing">
+               <number>0</number>
               </property>
               <item row="0" column="0">
                <widget class="QLabel" name="label_line">
                 <property name="font">
                  <font>
-                  <pointsize>13</pointsize>
+                  <family>Nunito</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="text">
@@ -672,7 +763,11 @@ background-color:  #3F3931;
                   <widget class="QLabel" name="label_typeLine">
                    <property name="font">
                     <font>
-                     <pointsize>11</pointsize>
+                     <family>Nunito</family>
+                     <pointsize>12</pointsize>
+                     <weight>50</weight>
+                     <italic>false</italic>
+                     <bold>false</bold>
                     </font>
                    </property>
                    <property name="text">
@@ -726,9 +821,12 @@ background-color:  #3F3931;
                </widget>
               </item>
               <item row="2" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,1">
                 <property name="spacing">
-                 <number>15</number>
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
                 </property>
                 <item>
                  <widget class="QLabel" name="label_widthLine">
@@ -739,6 +837,12 @@ background-color:  #3F3931;
                 </item>
                 <item>
                  <widget class="QDoubleSpinBox" name="doubleSpinBox_widthLine">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="decimals">
                    <number>1</number>
                   </property>
@@ -749,61 +853,48 @@ background-color:  #3F3931;
                 </item>
                </layout>
               </item>
-              <item row="3" column="0">
-               <widget class="QPushButton" name="pushButton_colorLine">
-                <property name="text">
-                 <string>Цвет линии</string>
-                </property>
-               </widget>
-              </item>
              </layout>
             </item>
-            <item row="3" column="0">
-             <widget class="Line" name="line_2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="lineWidth">
-               <number>2</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="label_versh">
-              <property name="font">
-               <font>
-                <pointsize>13</pointsize>
-               </font>
-              </property>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="pushButton_colorLine">
               <property name="text">
-               <string>Настройка отображения вершин</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="margin">
-               <number>2</number>
+               <string>Цвет линии</string>
               </property>
              </widget>
             </item>
-            <item row="5" column="0">
+            <item row="3" column="0">
              <layout class="QGridLayout" name="gridLayout_versh">
               <property name="topMargin">
                <number>3</number>
               </property>
-              <property name="horizontalSpacing">
+              <property name="spacing">
                <number>0</number>
               </property>
-              <property name="verticalSpacing">
-               <number>2</number>
-              </property>
-              <item row="0" column="0">
+              <item row="2" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,1">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_widthTop">
+                  <property name="text">
+                   <string>Толщина вершин:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="doubleSpinBox_widthTop">
+                  <property name="decimals">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <double>0.500000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
                <widget class="QFrame" name="frame_4">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -818,7 +909,7 @@ background-color:  #3F3931;
                  <property name="bottomMargin">
                   <number>3</number>
                  </property>
-                 <item row="0" column="1">
+                 <item row="2" column="1">
                   <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,1,1">
                    <property name="spacing">
                     <number>1</number>
@@ -867,7 +958,7 @@ background-color:  #3F3931;
                    </item>
                   </layout>
                  </item>
-                 <item row="0" column="0">
+                 <item row="2" column="0">
                   <widget class="QLabel" name="label_top">
                    <property name="text">
                     <string>Представление
@@ -878,62 +969,44 @@ background-color:  #3F3931;
                 </layout>
                </widget>
               </item>
-              <item row="1" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <property name="spacing">
-                 <number>15</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="label_widthTop">
-                  <property name="text">
-                   <string>Толщина вершин:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QDoubleSpinBox" name="doubleSpinBox_widthTop">
-                  <property name="decimals">
-                   <number>1</number>
-                  </property>
-                  <property name="value">
-                   <double>0.500000000000000</double>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item row="2" column="0">
-               <widget class="QPushButton" name="pushButton_colorVersh">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_versh">
+                <property name="font">
+                 <font>
+                  <family>Nunito</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
                 </property>
                 <property name="text">
-                 <string>Цвет вершин</string>
+                 <string>Настройка отображения вершин</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="margin">
+                 <number>2</number>
                 </property>
                </widget>
               </item>
              </layout>
             </item>
-            <item row="6" column="0">
-             <widget class="Line" name="line_3">
+            <item row="4" column="0">
+             <widget class="QPushButton" name="pushButton_colorVersh">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
-              <property name="lineWidth">
-               <number>2</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+              <property name="text">
+               <string>Цвет вершин</string>
               </property>
              </widget>
             </item>
-            <item row="7" column="0">
+            <item row="5" column="0">
              <widget class="QPushButton" name="pushButton_backgroungColor">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -955,8 +1028,53 @@ background-color:  #3F3931;
       <item row="0" column="0">
        <widget class="QWidget" name="widget" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: white;</string>
+         <string notr="true"/>
         </property>
+        <widget class="QFrame" name="frame_output">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>140</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_fileName">
+            <property name="text">
+             <string>fileName</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_countTop">
+            <property name="text">
+             <string>count versh</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_countReber">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>count reber</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
